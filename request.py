@@ -5,4 +5,6 @@ from .models import news
 News = news.News
 
 # Getting api key
-api_key = app.config['NEWS_API_KEY']
+  api_key = app.config['NEWS_API_KEY']
+  #Getting the news base url
+  base_url = app.config['NEWS_API_BASE_URL']
