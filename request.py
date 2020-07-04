@@ -27,3 +27,20 @@ News = news.News
             sources_results = process_results(sources_result_list)
 
     return sources_results
+
+    def process_results(sources_list):
+    '''
+    Functions that takes in list of sources results and transforms them into objects
+    '''
+    source_list = []
+    for source_item in sources_list:
+        name = source_item.get('name')
+        description = source_item.get('description')
+        category = source_item.get('category')
+        url = source_item.get('url')
+        id = source_item.get('id')
+
+        source_object = News_source(name,description,category,url,id)
+        source_list.append(source_object)
+    
+    return source_list
