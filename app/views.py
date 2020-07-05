@@ -15,11 +15,11 @@ def index():
     title = 'Home - Welcome to The best News Review Website Online'
     return render_template('index.html', title = title, popular = popular_sources)
 
-@app.route('/news/<int:news_id>')
-def news(news_id):
+@app.route('/news/<int:article_id>')
+def article(article_id):
 
     '''
-    View news page function that returns the news details page and its data
+    View article page function that returns the articles details page and its data
     '''
     article = get_article(id)
     title = f'{article.title}'
