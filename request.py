@@ -28,7 +28,7 @@ News = news.News
 
     return sources_results
 
-    def process_results(sources_list):
+  def process_results(sources_list):
     '''
     Functions that takes in list of sources results and transforms them into objects
     '''
@@ -44,3 +44,21 @@ News = news.News
         source_list.append(source_object)
     
     return source_list
+
+  def get_articles(newssource):
+    '''
+    Method to get articles from the apis
+    '''
+    get_articles_url = 'https://newsapi.org/v2/everything?sources={}&apiKey={}'.format(newssource,api_key)    
+
+    with urllib.request.urlopen(get_articles_url) as url:
+        get_articles_data = url.read()
+        get_articles_response = json.loads(get_articles_data)
+
+        articles_results = None
+
+        if get_articles_response ['articles']:
+            articles_results_list = get_articles_response['articles']
+            articles_results = process_articles(articles_results_list)
+
+    return articles_results
