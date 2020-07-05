@@ -1,21 +1,10 @@
 {% extends 'base.html'%}
 {% import 'macros.html'as macros%}
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> Welcome to the best News Review website </title>
-        {% endif %}
-    </head>
-    <body>
-            <!-- Popular movie section  -->
-            <h3> Popular Sources</h3>
-             <ul>
-               {{ macro.displayNewsList(popular)}}
-            </ul>
-    
-    </body>
-</html>
+
+{% block content %}
+<!--popular sources-->
+<h3> Popular Sources</h3>
+    <ul>
+        {{ macro.displayNewsList(popular)}}
+    </ul>
+    {% endblock %}
