@@ -62,3 +62,20 @@ News = news.News
             articles_results = process_articles(articles_results_list)
 
     return articles_results
+
+  def process_articles(article_list):
+    '''
+    Method to process articles list and transform them into objects
+    '''
+    articles_list = []
+    for article in article_list:
+        #source = article.get(['sources']['id'])
+        image = article.get('urlToImage')
+        description = article.get('description')
+        timecreated = article.get('publishedAt')
+        articlelink = article.get('url')
+
+        article_object = News_article(image,description,timecreated,articlelink)
+        articles_list.append(article_object)
+        
+    return articles_list
