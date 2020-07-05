@@ -1,15 +1,17 @@
-from app import app
+from .models import News_article,News_source
 import urllib.request,json
-from .models import news
 
-News = news.News
+api_key = None
 
-# Getting api key
-  api_key = app.config['NEWS_API_KEY']
-  #Getting the news base url
-  base_url = app.config['NEWS_API_BASE_URL']
+base_url = None
 
-  def get_sources():
+def configure_request(app):
+    global api_key,base_url
+    api_key = app.config['NEWS_API_KEY']
+    base_url = app.config['NEWS_API_BASE_URL']
+
+
+def get_sources():
     '''
     This function gets json response from the news site
     '''
@@ -28,7 +30,7 @@ News = news.News
 
     return sources_results
 
-  def process_results(sources_list):
+def process_results(sources_list):
     '''
     Functions that takes in list of sources results and transforms them into objects
     '''
@@ -45,7 +47,7 @@ News = news.News
     
     return source_list
 
-  def get_articles(newssource):
+def get_articles(newssource):
     '''
     Method to get articles from the apis
     '''
@@ -63,7 +65,7 @@ News = news.News
 
     return articles_results
 
-  def process_articles(article_list):
+def process_articles(article_list):
     '''
     Method to process articles list and transform them into objects
     '''
