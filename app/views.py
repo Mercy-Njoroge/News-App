@@ -1,7 +1,7 @@
 from flask import render_template
 from app import app
 from .request import get_sources
-from .requests import get_articles,get_article
+from .requests import get_articles,get_article,process_article
 
 # Views
 @app.route('/')
