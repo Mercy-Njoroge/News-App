@@ -1,13 +1,8 @@
-/* .card-body{
-    background-color: #fffdd0;
-} */
 img {
     height: 200px;
     width: 200px;
 }
 body {
-    /* background-color: #fffdd0; */
-    /* font-family: 'Bad Script', cursive; */
     background-attachment: fixed;
     background-image: url(../images/nab.jpg);
     font-size: 24px;
