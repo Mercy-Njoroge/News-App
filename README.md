@@ -5,7 +5,7 @@ This is an application that will help list and preview news articles from variou
 Mercy-Njoroge
 
 # Live Link
-[ ]
+[https://kasha-news-app.herokuapp.com/]
 
 ## Description
 This is a web site that takes various news sources and displays them to a user. a user can then navigate to view the various articles.The application is created to allow users to catch up on the latest news.
